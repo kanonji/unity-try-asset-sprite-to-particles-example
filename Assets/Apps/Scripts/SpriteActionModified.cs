@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpriteAction : MonoBehaviour
+public class SpriteActionModified : MonoBehaviour
 {
 	static int hashSpeed = Animator.StringToHash ("Speed");
 	static int hashFallSpeed = Animator.StringToHash ("FallSpeed");
@@ -47,5 +47,7 @@ public class SpriteAction : MonoBehaviour
 		// flip sprite
 		if (axis != 0)
 			spriteRenderer.flipX = axis < 0;
+
+		rig2d.velocity = new Vector2(axis, rig2d.velocity.y);
 	}
 }
